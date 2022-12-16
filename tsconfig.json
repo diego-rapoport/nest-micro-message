@@ -17,6 +17,13 @@
     "noImplicitAny": false,
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
-    "noFallthroughCasesInSwitch": false
+    "noFallthroughCasesInSwitch": false,
+    "paths": {
+      "@entities": ["./src/@entities"],
+      "@services": ["./src/@services"],
+      "@use-cases": ["./src/@use-cases"],
+      "@interfaces": ["./src/@interfaces"],
+      "@repositories": ["./src/@repositories"]
+    }
   }
 }
