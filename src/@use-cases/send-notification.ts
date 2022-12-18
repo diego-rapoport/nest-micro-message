@@ -4,7 +4,7 @@ import { Notification } from 'src/@entities/notification'
 import {
   ISendNotificationRequest,
   ISendNotificationResponse,
-} from 'src/@interfaces/isendNotificationRequest'
+} from 'src/@interfaces/iSendNotification'
 import { NotificationRepository } from 'src/@repositories/notification-repository'
 
 @Injectable()

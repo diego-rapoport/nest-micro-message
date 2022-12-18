@@ -1,8 +1,8 @@
 import { Test, TestingModule } from '@nestjs/testing'
-import { NotificationRepository } from 'src/@repositories/notification-repository'
-import { PrismaNotificationsRepository } from 'src/@repositories/prisma-notifications-repository'
-import { PrismaService } from 'src/@services/prisma.service'
-import { SendNotification } from 'src/@use-cases/send-notification'
+import { NotificationRepository } from '@repositories/notification-repository'
+import { PrismaNotificationsRepository } from '@repositories/prisma-notifications-repository'
+import { PrismaService } from '@services/prisma.service'
+import { SendNotification } from '@use-cases/send-notification'
 import { NotificationsController } from './notifications.controller'
 
 describe('NotificationsController', () => {

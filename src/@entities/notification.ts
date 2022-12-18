@@ -1,13 +1,13 @@
 import { randomUUID } from 'crypto'
-import { INotification, NProps } from 'src/@interfaces/inotification'
+import { INotification, NProps } from 'src/@interfaces/iNotification'
 import { Content } from './content'
 
 export class Notification implements INotification {
   private _id: string
   readonly _props: NProps
 
-  constructor(props: NProps) {
-    this._id = randomUUID()
+  constructor(props: NProps, id?: string) {
+    this._id = id ?? randomUUID()
     this._props = { ...props, createdAt: new Date() }
   }
 
@@ -43,11 +43,23 @@ export class Notification implements INotification {
     return this._props.readAt
   }
 
-  public set readAt(newReadAt: Date | null | undefined) {
-    this._props.readAt = newReadAt
+  public read() {
+    this._props.readAt = new Date()
+  }
+
+  public unread() {
+    this._props.readAt = null
   }
 
   public get createdAt() {
     return this._props.createdAt
+  }
+
+  public get canceledAt(): Date | null | undefined {
+    return this._props.canceledAt
+  }
+
+  public cancel() {
+    this._props.canceledAt = new Date()
   }
 }

@@ -1,10 +1,9 @@
-export default {
+import { Config } from 'jest'
+
+const config: Config = {
   moduleFileExtensions: ['js', 'json', 'ts'],
   modulePaths: ['src', '<rootDir>/src/', '<rootDir>/../'],
-  // roots: ['./'],
-  /* moduleNameMapper: {
-    'src/@entities/content': './src/@entities/content',
-  }, */
+  moduleNameMapper: { '^@/(.*)$': '<rootDir>/src/$1' },
   moduleDirectories: ['src', 'node_modules'],
   rootDir: 'src',
   testRegex: '.*\\.spec\\.ts$',
@@ -15,3 +14,5 @@ export default {
   coverageDirectory: '../coverage',
   testEnvironment: 'node',
 }
+
+export default config

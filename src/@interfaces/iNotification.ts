@@ -6,6 +6,7 @@ export type NProps = {
   category: string
   readAt?: Date | null
   createdAt?: Date
+  canceledAt?: Date | null
 }
 
 export interface INotification {
