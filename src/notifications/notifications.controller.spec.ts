@@ -3,6 +3,11 @@ import { NotificationRepository } from '@repositories/notification-repository'
 import { PrismaNotificationsRepository } from '@repositories/prisma-notifications-repository'
 import { PrismaService } from '@services/prisma.service'
 import { SendNotification } from '@use-cases/send-notification'
+import { CancelNotification } from '@use-cases/cancel-notification'
+import { CountRecipientNotification } from '@use-cases/count-recipient-notifications'
+import { GetRecipientNotifications } from '@use-cases/get-recipient-notifications'
+import { ReadNotification } from '@use-cases/read-notification'
+import { UnreadNotification } from '@use-cases/unread-notification'
 import { NotificationsController } from './notifications.controller'
 
 describe('NotificationsController', () => {
@@ -13,6 +18,11 @@ describe('NotificationsController', () => {
       providers: [
         PrismaService,
         SendNotification,
+        CancelNotification,
+        CountRecipientNotification,
+        GetRecipientNotifications,
+        ReadNotification,
+        UnreadNotification,
         {
           provide: NotificationRepository,
           useClass: PrismaNotificationsRepository,
